@@ -4,8 +4,7 @@ Soon, you will realize that you already know things that you thought you didn’
 ### 대략적인 계획 
 
 - 협업툴
-    - JIRA
-        - [JIRA 이슈 & 스프린트 관리](https://www.notion.so/JIRA-5e448278c9844037bc9728c550275e0c) 
+    - JIRA: [JIRA 이슈 & 스프린트 관리](https://www.notion.so/JIRA-5e448278c9844037bc9728c550275e0c) 
     - git flow
 - 강의
     1. basic: JS 기초 강의
