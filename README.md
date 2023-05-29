@@ -2,7 +2,7 @@
 
 Soon, you will realize that you already know things that you thought you didn’t
 
-- [notion](https://mher9804.notion.site/ft_transcendence-0b57033ffc88404197d993cdd33ab020)
+- [notion]([https://mher9804.notion.site/ft_transcendence-0b57033ffc88404197d993cdd33ab020](https://florentine-apology-55c.notion.site/6759f2174e0547e5971667f80cd1e207))
 
 ---
 
