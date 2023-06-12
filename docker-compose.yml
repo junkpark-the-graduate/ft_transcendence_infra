@@ -1,16 +1,41 @@
 version: "3"
+
 services:
   db:
     image: postgres:latest
     container_name: postgres
     restart: always
-    ports:
-      - "5432:5432"
     environment:
-      POSTGRES_USER: "postgres"
-      POSTGRES_PASSWORD: "password"
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: postgres
+    expose:
+      - "5432"
     volumes:
-      - db_data:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql/data
+
+  front:
+    container_name: front
+    build:
+      context: ../front
+    image: front
+    ports:
+      - "3000:3000"
+    volumes:
+      - ../front:/app
+
+  back:
+    depends_on:
+      - db
+    container_name: back
+    build:
+      context: ../back
+    image: back
+    ports:
+      - "3001:3001"
+    volumes:
+      - ../back:/app
+      - /app/node_modules
 
 volumes:
-  db_data:
+  postgres_data:
