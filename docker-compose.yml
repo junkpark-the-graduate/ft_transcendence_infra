@@ -40,6 +40,7 @@ services:
       - .env
     ports:
       - "${BACKEND_PORT}:${BACKEND_PORT}"
+      - "4242:4242"
     volumes:
       - ../back:/app
       - backend_node_modules:/app/node_modules
