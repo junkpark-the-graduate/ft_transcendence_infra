@@ -16,6 +16,7 @@ services:
 
   front:
     container_name: front
+    restart: always
     build:
       context: ../front
     image: front
@@ -31,6 +32,7 @@ services:
     depends_on:
       - db
     container_name: back
+    restart: always
     build:
       context: ../back
     image: back

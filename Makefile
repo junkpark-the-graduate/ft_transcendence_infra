@@ -1,7 +1,7 @@
 name := ft_transcendence
 
 all:
-	docker-compose up --env-file .env -d --build --force-recreate
+	docker-compose up -d --build --force-recreate
 
 build:
 	docker-compose up -d --build
@@ -21,14 +21,14 @@ restart:
 logs:
 	docker-compose logs -f
 
-#clean: down
-#	docker-compose down -v --rmi all --remove-orphans
+clean: down
+	docker-compose down -v --rmi all --remove-orphans
 
-#fclean: clean
-#	#docker system prune --volumes --all --force
-#	#docker network prune --force
-#	#docker volume prune --force
+fclean: clean
+	docker system prune --volumes --all --force
+	docker network prune --force
+	docker volume prune --force
 
-#re: fclean all
+re: fclean all
 
 .PHONY: all build down re clean fclean start stop restart
