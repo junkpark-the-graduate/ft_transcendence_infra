@@ -1,7 +1,14 @@
 name := ft_transcendence
 
 all:
-	docker-compose up -d --build --force-recreate
+	docker-compose --env-file .env.dev -f docker-compose.yml -f docker-compose.dev.yml up -d --build --force-recreate
+
+dev:
+	docker-compose --env-file .env.dev -f docker-compose.yml -f docker-compose.dev.yml up -d --build --force-recreate
+
+prod:
+	sed -i '' "s/^HOST=.*/HOST=$(ifconfig en0 | awk '/inet / {print $2}')/" .env.prod
+	docker-compose --env-file .env.prod -f docker-compose.yml -f docker-compose.prod.yml up -d --build --force-recreate
 
 build:
 	docker-compose up -d --build

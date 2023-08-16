@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  db:
+    env_file:
+      - .env.prod
+    ports:
+      - ${DB_PORT}:${DB_PORT}
+
+  front:
+    env_file:
+      - .env.dev
+    volumes:
+      - ../front:/app
+
+  back:
+    env_file:
+      - .env.dev
+    volumes:
+      - ../back:/app
