@@ -3,7 +3,7 @@ version: "3"
 services:
   db:
     env_file:
-      - .env.prod
+      - .env.dev
     ports:
       - ${DB_PORT}:${DB_PORT}
 
