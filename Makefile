@@ -26,7 +26,8 @@ restart:
 	docker-compose restart
 
 logs:
-	docker-compose logs -f
+	#docker-compose logs -f
+	docker-compose --env-file .env.dev -f docker-compose.yml -f docker-compose.dev.yml logs -f
 
 clean: down
 	docker-compose down -v --rmi all --remove-orphans
