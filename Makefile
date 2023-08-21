@@ -14,10 +14,10 @@ build:
 	docker-compose up -d --build
 
 down:
-	docker-compose down
+	docker-compose --env-file .env.dev -f docker-compose.yml -f docker-compose.dev.yml down
 
 stop:
-	docker-compose stop
+	docker-compose --env-file .env.dev -f docker-compose.yml -f docker-compose.dev.yml stop
 
 start:
 	docker-compose start
